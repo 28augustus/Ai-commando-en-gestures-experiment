@@ -261,3 +261,187 @@ h2 {
 #webcam-placeholder p {
   margin: 0;
 }
+
+/* =====================================================
+   MOBIEL / RESPONSIVE
+   Plak dit onderaan style.css
+   ===================================================== */
+
+/* Zorgt dat de webcam-canvas altijd binnen de kaart blijft. */
+#webcam-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#webcam-container canvas {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Tablet en kleinere schermen */
+@media (max-width: 800px) {
+  main {
+    width: min(680px, 92%);
+    padding: 36px 0;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .kaart {
+    padding: 24px;
+  }
+}
+
+/* Telefoons */
+@media (max-width: 560px) {
+  main {
+    width: calc(100% - 28px);
+    padding: 24px 0 32px;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .status-chip {
+    width: fit-content;
+    margin-top: 0;
+  }
+
+  h1 {
+    margin: 6px 0 8px;
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .intro {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .eyebrow,
+  .stap {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .dashboard {
+    gap: 16px;
+  }
+
+  .kaart {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .kaart-kop {
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  .icoon {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    font-size: 20px;
+  }
+
+  .kaart-tekst {
+    margin: 16px 0;
+    font-size: 15px;
+  }
+
+  #mic-toggle-button {
+    min-height: 52px;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .voorbeeld {
+    margin: 18px 0;
+  }
+
+  .voorbeeld span {
+    width: 100%;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .info-vak {
+    padding: 12px;
+  }
+
+  .actie-vak {
+    min-height: 0;
+    margin: 18px 0 14px;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  #webcam-placeholder {
+    min-height: 280px;
+    border-radius: 14px;
+  }
+
+  #webcam-container canvas {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+
+  .camera-icoon {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+
+  .gebaar-uitleg {
+    gap: 10px;
+  }
+
+  .gebaar-uitleg div {
+    padding: 12px;
+  }
+
+  details {
+    margin-top: 16px;
+  }
+
+  #label-container {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Extra kleine telefoons, bijvoorbeeld 360 px breed */
+@media (max-width: 380px) {
+  main {
+    width: calc(100% - 20px);
+  }
+
+  .kaart {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .status-chip {
+    padding: 8px 11px;
+    font-size: 13px;
+  }
+
+  #webcam-placeholder {
+    min-height: 250px;
+  }
+}
