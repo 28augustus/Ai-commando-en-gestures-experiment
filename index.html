@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ConfirmHome</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <header class="hero">
+        <div>
+          <p class="eyebrow">SMART HOME · VEILIGE BEVESTIGING</p>
+
+          <h1>ConfirmHome</h1>
+
+          <p class="intro">
+            Zeg een Bubbels-opdracht en bevestig deze daarna met een handgebaar.
+          </p>
+        </div>
+
+        <div id="systeem-status" class="status-chip status-uit">
+          <span class="status-dot"></span>
+          Microfoon uit
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <section class="kaart spraak-kaart">
+          <div class="kaart-kop">
+            <div>
+              <p class="stap">STAP 1</p>
+              <h2>Spraakopdracht</h2>
+            </div>
+
+            <span class="icoon">🎙</span>
+          </div>
+
+          <p class="kaart-tekst">
+            Zet de microfoon aan. ConfirmHome luistert naar opdrachten die met
+            <strong>Bubbels</strong> beginnen.
+          </p>
+
+          <button id="mic-toggle-button" type="button">
+            Microfoon inschakelen
+          </button>
+
+          <div class="voorbeeld">
+            <p>Voorbeelden</p>
+
+            <span>Bubbels televisie aan</span>
+            <span>Bubbels lamp uit</span>
+          </div>
+
+          <div class="info-vak">
+            <p class="info-label">STATUS</p>
+            <p id="spraak-status">Schakel de microfoon in om te beginnen.</p>
+          </div>
+
+          <div class="info-vak">
+            <p class="info-label">LAATST HERKEND</p>
+            <p id="herkende-tekst">Nog geen spraak herkend.</p>
+          </div>
+        </section>
+
+        <section class="kaart bevestiging-kaart">
+          <div class="kaart-kop">
+            <div>
+              <p class="stap">STAP 2</p>
+              <h2>Handbevestiging</h2>
+            </div>
+
+            <span class="icoon">✋</span>
+          </div>
+
+          <div id="actie" class="actie-vak">
+            Wacht op een gesproken Bubbels-opdracht.
+          </div>
+
+          <div id="webcam-placeholder">
+            <div class="camera-icoon">◉</div>
+            <p>Camera staat stand-by</p>
+            <span>De camera start automatisch na een geldige opdracht.</span>
+          </div>
+
+          <div id="webcam-container"></div>
+
+          <div class="gebaar-uitleg">
+            <div>
+              <strong>Open hand</strong>
+              <span>Bevestigen</span>
+            </div>
+
+            <div>
+              <strong>Vuist</strong>
+              <span>Annuleren</span>
+            </div>
+          </div>
+
+          <details>
+            <summary>Toon AI-voorspellingen</summary>
+            <div id="label-container"></div>
+          </details>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

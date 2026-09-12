@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --donker: #0b1220;
+  --donker-blauw: #111c31;
+  --kaart: rgba(21, 33, 55, 0.88);
+  --rand: rgba(148, 163, 184, 0.18);
+  --tekst: #f8fafc;
+  --zacht: #a8b5c9;
+  --blauw: #3b82f6;
+  --groen: #22c55e;
+  --rood: #ef4444;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--tekst);
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at 10% 0%, #19335d 0%, transparent 34%),
+    radial-gradient(circle at 95% 5%, #133e42 0%, transparent 28%),
+    var(--donker);
+}
+
+main {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  padding: 56px 0;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.eyebrow,
+.stap,
+.info-label {
+  margin: 0;
+  color: #60a5fa;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+}
+
+h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: -2px;
+}
+
+.intro {
+  max-width: 580px;
+  margin: 0;
+  color: var(--zacht);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.status-chip {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 9px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--rand);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.status-uit {
+  color: #cbd5e1;
+  background-color: rgba(71, 85, 105, 0.28);
+}
+
+.status-uit .status-dot {
+  background-color: #94a3b8;
+}
+
+.status-aan {
+  color: #bbf7d0;
+  background-color: rgba(34, 197, 94, 0.14);
+}
+
+.status-aan .status-dot {
+  background-color: var(--groen);
+  box-shadow: 0 0 12px var(--groen);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(390px, 1.1fr);
+  gap: 22px;
+}
+
+.kaart {
+  padding: 28px;
+  border: 1px solid var(--rand);
+  border-radius: 22px;
+  background: var(--kaart);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+}
+
+.kaart-kop {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+}
+
+.icoon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(96, 165, 250, 0.32);
+  border-radius: 13px;
+  background-color: rgba(59, 130, 246, 0.13);
+  font-size: 23px;
+}
+
+.kaart-tekst {
+  margin: 20px 0;
+  color: var(--zacht);
+  line-height: 1.6;
+}
+
+#mic-toggle-button {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.24);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease;
+}
+
+#mic-toggle-button:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+#mic-toggle-button.mic-actief {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  box-shadow: 0 8px 18px rgba(239, 68, 68, 0.2);
+}
+
+#mic-toggle-button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.voorbeeld {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.voorbeeld p {
+  width: 100%;
+  margin: 0 0 3px;
+  color: var(--zacht);
+  font-size: 13px;
+}
+
+.voorbeeld span {
+  padding: 7px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+  color: #dbeafe;
+  background-color: rgba(15, 23, 42, 0.45);
+  font-size: 13px;
+}
+
+.info-vak {
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid var(--rand);
+  border-radius: 12px;
+  background-color: rgba(4, 10, 22, 0.3);
+}
+
+.info-label {
+  margin-bottom: 7px;
+  color: #93c5fd;
+  font-size: 10px;
+}
+
+.info-vak p:last-child {
+  margin: 0;
+  color: #dbe4f0;
+  line-height: 1.5;
+}
+
+.actie-vak {
+  min-height: 88px;
+  margin: 22px 0 18px;
+  padding: 18px;
+  border-radius: 14px;
+  color: #1e3a8a;
+  background-color: #eaf1ff;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+#webcam-placeholder {
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  align-content: center;
+  border: 1px dashed rgba(148, 163, 184, 0.34);
+  border-radius: 16px;
+  color: var(--zacht);
+  background-color: rgba(4, 10, 22, 0.25);
+  text-align: center;
+}
+
+#webcam-placeholder.verborgen {
+  display: none;
+}
+
+.camera-icoon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  margin-bottom: 9px;
+  border-radius: 50%;
+  color: #60a5fa;
+  background-color: rgba(59, 130, 246, 0.15);
+  font-size: 30px;
+}
+
+#webcam-placeholder p {
+  margin: 0;
+}
